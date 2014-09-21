@@ -36,7 +36,7 @@ my $en_url="https://next-services.apps.microsoft.com/4R/6.3.9600-0/788/ru-RU/m/U
 
 #MAIL SETTINGS
 my $to='mail1@example.com mail2@example.com';
-my $from='robot@mytona.com';
+my $from='robot@example.com';
 my $ru_subject='Windows Store Reviews [RU]';
 my $en_subject='Windows Store Reviews [EN]';
 
