@@ -25,14 +25,14 @@ my $ru_current=$pwd."/ru_current.txt";
 my $ru_previous=$pwd."/ru_previous.txt";
 my $ru_tmp=$pwd."/ru_tmp.xml";
 my $ru_mail=$pwd."/ru_mail.txt";
-my $ru_url="https://next-services.apps.microsoft.com/4R/6.3.9600-0/788/ru-RU/m/RU/Apps/a85640c3-05bd-400f-8e05-8782ae082b37/Reviews/all/s/date/1/pn/1/ri/62417f04-c1d7-4d04-a4b2-114aeba73951/vf/all";
+my $ru_url="";
 
 #EN SETTINGS
 my $en_current=$pwd."/en_current.txt";
 my $en_previous=$pwd."/en_previous.txt";
 my $en_tmp=$pwd."/en_tmp.xml";
 my $en_mail=$pwd."/en_mail.txt";
-my $en_url="https://next-services.apps.microsoft.com/4R/6.3.9600-0/788/ru-RU/m/US/Apps/a85640c3-05bd-400f-8e05-8782ae082b37/Reviews/all/s/date/1/pn/1/ri/62417f04-c1d7-4d04-a4b2-114aeba73951/vf/all";
+my $en_url="";
 
 #MAIL SETTINGS
 my $to='mail1@example.com mail2@example.com';
