@@ -1,9 +1,16 @@
 #!/usr/bin/perl
 
+<<<<<<< HEAD
 ###############################################
 # Windows Store Parser v1.6                   #
 # igroykt (c)04.09.2014-23.09.2014	      #
 ###############################################
+=======
+#################################################
+# Windows Store Parser v1.4 	   		#
+# igroykt (c)04.09.2014-18.09.2014		#
+#################################################
+>>>>>>> origin/master
 
 use strict;
 use XML::LibXML qw( );
@@ -35,8 +42,13 @@ my $en_mail=$pwd."/en_mail.txt";
 my $en_url="";
 
 #MAIL SETTINGS
+<<<<<<< HEAD
 my $to='';
 my $from='';
+=======
+my $to='mail1@example.com mail2@example.com';
+my $from='robot@example.com';
+>>>>>>> origin/master
 my $ru_subject='Windows Store Reviews [RU]';
 my $en_subject='Windows Store Reviews [EN]';
 

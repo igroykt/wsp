@@ -5,6 +5,8 @@
 #!/bin/bash
 source /root/.bash_profile
 
+#Dont forget to change path
+
 case "$1" in
 	"parse")
 		perl /root/bin/wsp/wsp.pl parse
