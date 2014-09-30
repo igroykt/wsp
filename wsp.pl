@@ -1,16 +1,9 @@
 #!/usr/bin/perl
 
-<<<<<<< HEAD
-###############################################
-# Windows Store Parser v1.6                   #
-# igroykt (c)04.09.2014-23.09.2014	      #
-###############################################
-=======
-#################################################
-# Windows Store Parser v1.4 	   		#
-# igroykt (c)04.09.2014-18.09.2014		#
-#################################################
->>>>>>> origin/master
+#########################################
+# Windows Store Parser v1.6             #
+# igroykt (c)04.09.2014-23.09.2014      #
+#########################################
 
 use strict;
 use XML::LibXML qw( );
@@ -42,13 +35,8 @@ my $en_mail=$pwd."/en_mail.txt";
 my $en_url="";
 
 #MAIL SETTINGS
-<<<<<<< HEAD
 my $to='';
 my $from='';
-=======
-my $to='mail1@example.com mail2@example.com';
-my $from='robot@example.com';
->>>>>>> origin/master
 my $ru_subject='Windows Store Reviews [RU]';
 my $en_subject='Windows Store Reviews [EN]';
 
@@ -69,7 +57,7 @@ sub parseReviews{
                 my $review_rating=$review->find('Rating');
                 my $review_comment=$review->find('Comment');
                 my $review_date=$review->find('LastUpdatedDate');
-                push(@current,trimDate($review_date)." Автор: ".$review_author." Рейтинг: ".$review_rating." Комментарий: ".$review_comment."\n");
+                push(@current,trimDate($review_date)." РђРІС‚РѕСЂ: ".$review_author." Р РµР№С‚РёРЅРі: ".$review_rating." РљРѕРјРјРµРЅС‚Р°СЂРёР№: ".$review_comment."\n");
         }
         my %seen=();
         my @unique=grep{ ! $seen{ $_ }++ } @current;
@@ -88,12 +76,12 @@ sub normalizeText {
         open $fileHandler,'<:utf8',$_[0];
         while(my $line=<$fileHandler>){
                 substr($line,0,9)='';
-                $line=~ s/Автор:  /Автор: Не указан /;
-                $line=~ s/Рейтинг:  /Рейтинг: Не указан /;
-                $line=~ s/Комментарий:  /Комментарий: Не указан /;
-                $line=~ s/Автор/\nАвтор/;
-                $line=~ s/Рейтинг/\nРейтинг/;
-                $line=~ s/Комментарий/\nКомментарий/;
+                $line=~ s/РђРІС‚РѕСЂ:  /РђРІС‚РѕСЂ: РќРµ СѓРєР°Р·Р°РЅ /;
+                $line=~ s/Р РµР№С‚РёРЅРі:  /Р РµР№С‚РёРЅРі: РќРµ СѓРєР°Р·Р°РЅ /;
+                $line=~ s/РљРѕРјРјРµРЅС‚Р°СЂРёР№:  /РљРѕРјРјРµРЅС‚Р°СЂРёР№: РќРµ СѓРєР°Р·Р°РЅ /;
+                $line=~ s/РђРІС‚РѕСЂ/\nРђРІС‚РѕСЂ/;
+                $line=~ s/Р РµР№С‚РёРЅРі/\nР РµР№С‚РёРЅРі/;
+                $line=~ s/РљРѕРјРјРµРЅС‚Р°СЂРёР№/\nРљРѕРјРјРµРЅС‚Р°СЂРёР№/;
                 push(@text,$line);
         }
         close $fileHandler;
@@ -112,7 +100,7 @@ sub makeUniq {
 sub sendMail {
         my $num_args=scalar(@_);
         if (-s $_[3]){
-                my $DIFF=`diff -u $_[2] $_[3] |grep '-'|sed '1,3d'|sed 's/-//g'|grep -v '+'|sed '/Комментарий/G' > $_[1]`;
+                my $DIFF=`diff -u $_[2] $_[3] |grep '-'|sed '1,3d'|sed 's/-//g'|grep -v '+'|sed '/РљРѕРјРјРµРЅС‚Р°СЂРёР№/G' > $_[1]`;
                 makeUniq($_[1]);
                 normalizeText($_[1]);
         }
